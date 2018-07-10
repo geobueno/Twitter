@@ -1,4 +1,6 @@
 document.getElementById("input-box").addEventListener("keydown", keydownFunction);
+document.getElementById("input-box").addEventListener("keyblur", keydownFunction);
+document.getElementById("input-box").addEventListener("keyup", keydownFunction);
 document.getElementById("countChar").style.color = "#1da1f2";
 document.getElementById("countChar").innerHTML = 140;
 
@@ -13,8 +15,7 @@ function keydownFunction() {
     document.getElementById("tweetBtn").style.backgroundColor = "#4AB3F4";
   }
 
-  var count = new Number();
-  count = 140 - numChar;
+  var count = 140 - numChar;
   document.getElementById("countChar").innerHTML = count;
   if (count >= 20) {
     document.getElementById("countChar").style.color = "#1da1f2";
@@ -31,26 +32,22 @@ function keydownFunction() {
 }
 
 function tweet() {
-  var newDiv = document.createElement("SPAN");
-  var newPost = document.createElement("ARTICLE");
-  newPost.setAttribute('lang', 'pt');
-  var newTime = document.createElement("ARTICLE");
+  var newDiv = document.createElement("span");
+  var newPost = document.createElement("article");
+  var newTime = document.createElement("article");
   var tweetInput = document.createTextNode(document.getElementById("input-box").value);
   var tweetTime = document.createTextNode(moment().format('LT'));
   newPost.appendChild(tweetInput);
   newTime.appendChild(tweetTime);
-
-  
-  document.getElementsByTagName("SPAN");
+  document.getElementsByTagName("span");
   newDiv.appendChild(newPost);
   newDiv.appendChild(newTime);
-  var tweetOutput = document.getElementById("output-box");
-  tweetOutput.appendChild(newDiv);
+  document.getElementById("output-box").appendChild(newDiv);
   newDiv.insertBefore(newTime, newDiv.childNodes[0]);
   newDiv.insertBefore(newPost, newDiv.childNodes[0]);
-  tweetOutput.insertBefore(newDiv, tweetOutput.childNodes[0]);
-  
+  document.getElementById("output-box").insertBefore(newDiv, document.getElementById("output-box").childNodes[0]);
 
+  //style tweet output-box
   newPost.style.width = "550px";
   newPost.style.marginLeft ="460px"
   newPost.style.borderBottom = "5px solid transparent";

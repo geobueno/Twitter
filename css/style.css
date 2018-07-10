@@ -10,7 +10,6 @@
     box-sizing: border-box;
 }
 
-
 body {
   font-family: "Segoe UI",Arial,sans-serif;
   background: #e6ecf0;
@@ -33,14 +32,15 @@ body {
   margin-left: 150px;
   margin-right: 150px;
 }
+
 .tweet-profile {
+  max-height: 200px;
   width: 400px;
   background: #1da1f2;
   margin-top: 10px;
   display: flex;
   align-items:center;
   justify-content: space-around;
-  position: static;
 }
 
 .tweet-content {
@@ -55,12 +55,12 @@ body {
   width: 460px;
   min-height: 70px;
   font-size: 14px;
-  font-family: "Segoe UI",Arial,sans-serif;
   border-color: transparent;
   background-color: #fff;
   outline-color: white;
   line-height: 20px;
 }
+
 button#tweetBtn {
   background: #a4d9f9;
   border-color: transparent;
@@ -88,7 +88,6 @@ span {
   resize: none;
   min-height: 80px;
   font-size: 14px;
-  font-family: "Segoe UI",Arial,sans-serif;
   border: 1px solid transparent;
   line-height: 20px;
 }
