@@ -53,8 +53,8 @@ function tweet() {
   newPost.style.borderBottom = "5px solid transparent";
   newPost.style.backgroundColor = "white";
   newTime.style.backgroundColor = "white";
-  newTime.style.marginLeft = "460px"
-  newPost.style.wordWrap = "break-word"
+  newTime.style.marginLeft = "460px";
+  newPost.style.wordWrap = "break-word";
 
   document.getElementById("tweetForm").reset();
   document.getElementById("tweetBtn").disabled = true;
@@ -77,11 +77,13 @@ function resizeTextfield(el) {
   var timer;
 
   function trigger() {
-    if (!el) { return ; }
+    if (!el) { 
+      return ; 
+    }
     el.style.height = "auto";
     var height = el.scrollHeight;
     el.style.height = height + "px";
-}
+  }
   function exec() {
     if (timer) {
       clearTimeout(timer);
